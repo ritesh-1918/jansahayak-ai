@@ -1,0 +1,63 @@
+name: basic-ci
+
+on:
+    pull_request:
+        branches: ["dev"]
+    workflow_dispatch:
+
+jobs:
+    backend-lint:
+        runs-on: ubuntu-latest
+        steps:
+            - uses: actions/checkout@v4
+
+            - name: Set up Python 3.10
+              uses: actions/setup-python@v5
+              with:
+                  python-version: "3.10"
+
+            - name: Install dependencies
+              run: |
+                  python -m pip install --upgrade pip
+                  pip install flake8
+                  if [ -f backend/requirements.txt ]; then pip install -r backend/requirements.txt; fi
+
+            - name: Lint with flake8
+              run: |
+                  # stop the build if there are Python syntax errors or undefined names
+                  flake8 backend --count --select=E9,F63,F7,F82 --show-source --statistics
+                  # exit-zero treats all errors as warnings. The GitHub editor is 127 chars wide
+                  flake8 backend --count --exit-zero --max-complexity=10 --max-line-length=127 --statistics
+
+    frontend-build-check:
+        runs-on: ubuntu-latest
+        defaults:
+            run:
+                working-directory: ./frontend
+        steps:
+            - uses: actions/checkout@v4
+
+            - name: Set up Node.js
+              uses: actions/setup-node@v4
+              with:
+                  node-version: "20"
+
+            - name: Install dependencies
+              run: |
+                  if [ -f package.json ]; then
+                    npm ci
+                  else
+                    echo "No package.json found. Skipping npm ci."
+                  fi
+
+            - name: Build
+              run: |
+                  if [ -f package.json ]; then
+                     if grep -q "\"build\":" "package.json"; then
+                        npm run build --if-present
+                     else
+                        echo "No build script in package.json. Skipping build."
+                     fi
+                  else
+                     echo "No package.json found. Skipping build."
+                  fi
