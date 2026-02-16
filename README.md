@@ -74,14 +74,14 @@ graph LR
 
 ## 🛠️ Tech Stack
 
-| Component | Technology |
-| :--- | :--- |
-| **Frontend** | React Native / WhatsApp Business API |
-| **Backend** | Python, FastAPI |
-| **AI Models** | OpenAI GPT-4o / AWS Bedrock |
-| **Speech Services** | OpenAI Whisper (STT) / ElevenLabs (TTS) |
-| **Database** | PostgreSQL (User Data), Pinecone (Vector DB) |
-| **Cloud** | AWS / Render |
+| Component | Technology | Owner |
+| :--- | :--- | :--- |
+| **Frontend** | React Native / WhatsApp Business API | Asna |
+| **Backend** | Python, FastAPI | Ritesh |
+| **AI Models** | OpenAI GPT-4o / AWS Bedrock | Ritesh |
+| **Speech Services** | OpenAI Whisper (STT) / ElevenLabs (TTS) | Ritesh |
+| **Database** | PostgreSQL (User Data), Pinecone (Vector DB) | Ritesh |
+| **Cloud** | AWS / Render | Ritesh |
 
 ---
 
@@ -181,9 +181,12 @@ JanSahayak AI aims to empower the **65% of India's population** residing in rura
 
 ---
 
-## 👥 Contributors
+## 👥 Team Roles
 
-*   **Team JanSahayak** - Hackathon Participation
+| Name | Role | Responsibilities |
+| :--- | :--- | :--- |
+| **Asna Abdul Kareem** | Frontend & UX Developer | Mobile app development, user interface design, WhatsApp integration |
+| **Ritesh Bonthalakoti** | Backend & Infrastructure Developer | API development, AI integration, database management, deployment |
 
 ---
 
