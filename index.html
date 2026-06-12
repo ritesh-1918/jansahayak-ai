@@ -2565,6 +2565,15 @@
     attachTapZone('tap-next',  1);
   });
 
+  // In scroll mode: show counter final values immediately (no animation)
+  document.addEventListener('DOMContentLoaded', function() {
+    if (!inPres) {
+      document.querySelectorAll('.counter').forEach(function(el) {
+        el.textContent = el.dataset.target + (el.dataset.suffix || '');
+      });
+    }
+  });
+
   // Nav dots
   function buildNavDots() {
     const el = document.getElementById('nav-dots'); if (!el) return;
