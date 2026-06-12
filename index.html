@@ -32,6 +32,7 @@
 
     /* ── Reset ── */
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    * { -webkit-tap-highlight-color: transparent; }
 
     body {
       background: var(--bg);
@@ -261,9 +262,28 @@
       width: 22%;
       z-index: 9980;
       cursor: pointer;
+      -webkit-tap-highlight-color: transparent;
+      outline: none;
+      user-select: none;
+      -webkit-user-select: none;
+      overflow: hidden;
     }
     body.presentation-mode #tap-prev { display: block; left: 0; }
     body.presentation-mode #tap-next { display: block; right: 50px; }
+
+    /* Tap ripple */
+    .tap-ripple {
+      position: absolute;
+      border-radius: 50%;
+      width: 80px; height: 80px;
+      background: rgba(245,158,11,0.18);
+      transform: translate(-50%, -50%) scale(0);
+      animation: tapRipple 0.4s ease-out forwards;
+      pointer-events: none;
+    }
+    @keyframes tapRipple {
+      to { transform: translate(-50%, -50%) scale(3.5); opacity: 0; }
+    }
 
     /* ── Mobile (touch device) overrides ── */
     @media (pointer: coarse) {
@@ -2511,6 +2531,25 @@
       });
     }
 
+  // Tap zone ripple + navigation
+  function attachTapZone(id, dir) {
+    var el = document.getElementById(id);
+    if (!el) return;
+    el.addEventListener('pointerdown', function(e) {
+      var r = document.createElement('div');
+      r.className = 'tap-ripple';
+      r.style.left = e.offsetX + 'px';
+      r.style.top  = e.offsetY + 'px';
+      el.appendChild(r);
+      r.addEventListener('animationend', function() { r.remove(); });
+    });
+    el.addEventListener('click', function() { goTo(cur + dir); });
+  }
+  document.addEventListener('DOMContentLoaded', function() {
+    attachTapZone('tap-prev', -1);
+    attachTapZone('tap-next',  1);
+  });
+
   // Nav dots
   function buildNavDots() {
     const el = document.getElementById('nav-dots'); if (!el) return;
@@ -2581,7 +2620,7 @@
   <div id="key-hint">← → navigate &nbsp;·&nbsp; Esc exit</div>
   <div id="nav-dots"></div>
   <div id="swipe-hint">← swipe to navigate →</div>
-  <div id="tap-prev"  onclick="goTo(cur-1)"></div>
-  <div id="tap-next"  onclick="goTo(cur+1)"></div>
+  <div id="tap-prev"></div>
+  <div id="tap-next"></div>
 </body>
 </html>
