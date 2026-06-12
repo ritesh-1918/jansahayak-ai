@@ -1,13 +1,22 @@
 # Contributing to JanSahayak AI
 
+## 👥 Team Roles
+
+| Name | Role | Responsibilities |
+| :--- | :--- | :--- |
+| **Asna Abdul Kareem** | Frontend & UX Developer | Mobile app development, user interface design, WhatsApp integration |
+| **Ritesh Bonthalakoti** | Backend & Infrastructure Developer | API development, AI integration, database management, deployment |
+
+---
+
 ## Branch Strategy
 
 We follow a strict branching strategy to ensure code quality and stability.
 
-*   **`main`**: Production branch. deployable code only. **Protected.**
+*   **`main`**: Production branch. Deployable code only. **Protected.**
 *   **`dev`**: Integration branch. All features merge here first. **Protected.**
-*   **`asna-dev`**: Backend development (FastAPI, Database).
-*   **`ritesh-dev`**: AI & UI development (React Native, LLM).
+*   **`asna-dev`**: Frontend development (React Native, UI/UX, WhatsApp).
+*   **`ritesh-dev`**: Backend development (FastAPI, AI/LLM, Database, Infrastructure).
 
 ## Branch Protection Rules (Manual Setup Required)
 
