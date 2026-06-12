@@ -1,0 +1,18 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "janshayak-presentation",
+      "runtimeExecutable": "python",
+      "runtimeArgs": ["-m", "http.server", "7432", "--directory", "docs/Presentation"],
+      "port": 7432
+    },
+    {
+      "name": "jansahayak-frontend",
+      "runtimeExecutable": "npm",
+      "runtimeArgs": ["run", "dev"],
+      "cwd": "frontend",
+      "port": 3000
+    }
+  ]
+}

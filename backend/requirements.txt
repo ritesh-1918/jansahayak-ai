@@ -4,3 +4,23 @@ python-dotenv
 pydantic
 pydantic-settings
 httpx
+aiohttp
+
+# LangGraph + LangChain
+langgraph>=0.2.0
+langchain>=0.3.0
+langchain-core>=0.3.0
+
+# LLM providers (fallback chain)
+langchain-groq
+langchain-openai
+langchain-google-genai
+groq
+openai
+google-generativeai
+
+# Messaging
+twilio
+
+# Database
+sqlalchemy

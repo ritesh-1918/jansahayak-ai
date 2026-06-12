@@ -1,0 +1,226 @@
+[
+  {
+    "id": "pm_kisan",
+    "name": "PM-KISAN (Pradhan Mantri Kisan Samman Nidhi)",
+    "description": "Direct income support of Rs. 6000 per year to small and marginal farmer families who own cultivable land.",
+    "eligibility": {
+      "min_age": 18,
+      "max_age": null,
+      "max_income_annual": 150000,
+      "occupation": ["farmer", "agriculture", "kisan", "cultivator"],
+      "gender": "any",
+      "location_type": "rural",
+      "requires_land": true
+    },
+    "benefit": "Rs. 6000 per year paid in 3 equal instalments of Rs. 2000 directly to bank account",
+    "documents_required": [
+      "Aadhaar Card",
+      "Land Records (Khasra/Khatauni)",
+      "Bank Account (linked to Aadhaar)",
+      "Mobile Number"
+    ],
+    "apply_url": "https://pmkisan.gov.in"
+  },
+  {
+    "id": "pm_awas_yojana",
+    "name": "PM Awas Yojana Gramin (Pradhan Mantri Awas Yojana - Rural)",
+    "description": "Financial assistance to rural households to build a pucca house with basic amenities.",
+    "eligibility": {
+      "min_age": 18,
+      "max_age": null,
+      "max_income_annual": 300000,
+      "occupation": ["any"],
+      "gender": "any",
+      "location_type": "rural",
+      "requires_land": false
+    },
+    "benefit": "Rs. 1.20 lakh (plains) or Rs. 1.30 lakh (hilly/difficult areas) for house construction",
+    "documents_required": [
+      "Aadhaar Card",
+      "BPL Card or SECC data",
+      "Bank Account",
+      "Land Documents or NOC",
+      "Passport Photo"
+    ],
+    "apply_url": "https://pmayg.nic.in"
+  },
+  {
+    "id": "ayushman_bharat",
+    "name": "Ayushman Bharat PM-JAY (Pradhan Mantri Jan Arogya Yojana)",
+    "description": "Health insurance providing free medical treatment up to Rs. 5 lakh per family per year at empanelled hospitals.",
+    "eligibility": {
+      "min_age": 0,
+      "max_age": null,
+      "max_income_annual": 250000,
+      "occupation": ["any"],
+      "gender": "any",
+      "location_type": "any",
+      "secc_listed": true
+    },
+    "benefit": "Rs. 5 lakh per family per year for secondary and tertiary hospitalisation",
+    "documents_required": [
+      "Aadhaar Card",
+      "Ration Card",
+      "SECC/BPL certificate (if applicable)"
+    ],
+    "apply_url": "https://pmjay.gov.in"
+  },
+  {
+    "id": "pm_ujjwala",
+    "name": "PM Ujjwala Yojana (Pradhan Mantri Ujjwala Yojana)",
+    "description": "Free LPG gas connections to women from below poverty line (BPL) households to ensure clean cooking fuel.",
+    "eligibility": {
+      "min_age": 18,
+      "max_age": null,
+      "max_income_annual": 150000,
+      "occupation": ["any"],
+      "gender": "female",
+      "location_type": "any",
+      "target_groups": ["SC", "ST", "OBC", "BPL", "forest_dwellers", "tea_garden", "river_island"]
+    },
+    "benefit": "Free LPG connection with first refill free; subsidised refills thereafter",
+    "documents_required": [
+      "Aadhaar Card",
+      "Ration Card",
+      "BPL Certificate or SECC data",
+      "Bank Account",
+      "Passport Photo"
+    ],
+    "apply_url": "https://pmuy.gov.in"
+  },
+  {
+    "id": "pmfby",
+    "name": "PMFBY (Pradhan Mantri Fasal Bima Yojana)",
+    "description": "Crop insurance scheme providing financial support to farmers suffering crop loss or damage due to unforeseen events.",
+    "eligibility": {
+      "min_age": 18,
+      "max_age": null,
+      "max_income_annual": null,
+      "occupation": ["farmer", "agriculture", "kisan", "cultivator"],
+      "gender": "any",
+      "location_type": "rural",
+      "requires_land": true
+    },
+    "benefit": "Insurance coverage for Kharif crops at 2% premium, Rabi crops at 1.5% premium; full sum insured on total crop loss",
+    "documents_required": [
+      "Aadhaar Card",
+      "Land Records (Khasra/Khatauni)",
+      "Bank Account",
+      "Sowing Certificate",
+      "Mobile Number"
+    ],
+    "apply_url": "https://pmfby.gov.in"
+  },
+  {
+    "id": "national_scholarship",
+    "name": "National Scholarship Portal (NSP) - Pre & Post Matric Scholarship",
+    "description": "Scholarships for students from SC, ST, OBC, minority and economically weaker sections for school and higher education.",
+    "eligibility": {
+      "min_age": 6,
+      "max_age": 35,
+      "max_income_annual": 250000,
+      "occupation": ["student"],
+      "gender": "any",
+      "location_type": "any",
+      "target_groups": ["SC", "ST", "OBC", "minority", "EWS", "PwD"]
+    },
+    "benefit": "Pre-Matric: Rs. 1000-10,000/year; Post-Matric: Rs. 5000-20,000/year; Higher Education: up to Rs. 20,000/year",
+    "documents_required": [
+      "Aadhaar Card",
+      "Caste/Community Certificate",
+      "Income Certificate",
+      "Previous Year Marksheet",
+      "Bank Account",
+      "Admission Letter"
+    ],
+    "apply_url": "https://scholarships.gov.in"
+  },
+  {
+    "id": "pm_mudra",
+    "name": "PM Mudra Yojana (Pradhan Mantri MUDRA Yojana)",
+    "description": "Collateral-free micro loans to small and micro enterprises for income-generating activities in non-farm sector.",
+    "eligibility": {
+      "min_age": 18,
+      "max_age": 65,
+      "max_income_annual": null,
+      "occupation": ["entrepreneur", "self-employed", "small_business", "artisan", "shopkeeper", "trader"],
+      "gender": "any",
+      "location_type": "any"
+    },
+    "benefit": "Shishu: up to Rs. 50,000 | Kishore: Rs. 50,001 to Rs. 5 lakh | Tarun: Rs. 5 lakh to Rs. 10 lakh",
+    "documents_required": [
+      "Aadhaar Card",
+      "PAN Card",
+      "Bank Account",
+      "Business Plan / Project Report",
+      "Address Proof",
+      "Passport Photo"
+    ],
+    "apply_url": "https://www.mudra.org.in"
+  },
+  {
+    "id": "sukanya_samriddhi",
+    "name": "Sukanya Samriddhi Yojana",
+    "description": "Small savings scheme for the girl child providing high interest rate and tax benefits to secure her future.",
+    "eligibility": {
+      "min_age": 0,
+      "max_age": 10,
+      "max_income_annual": null,
+      "occupation": ["any"],
+      "gender": "female",
+      "location_type": "any",
+      "account_for": "girl_child"
+    },
+    "benefit": "Current interest rate 8.2% p.a. (one of highest for small savings); tax-free maturity amount; account matures at age 21",
+    "documents_required": [
+      "Girl Child's Birth Certificate",
+      "Parent/Guardian Aadhaar Card",
+      "Parent/Guardian PAN Card",
+      "Address Proof",
+      "Passport Photo of Girl Child"
+    ],
+    "apply_url": "https://www.indiapost.gov.in"
+  },
+  {
+    "id": "atal_pension",
+    "name": "Atal Pension Yojana (APY)",
+    "description": "Government-backed pension scheme for unorganised sector workers providing guaranteed pension after age 60.",
+    "eligibility": {
+      "min_age": 18,
+      "max_age": 40,
+      "max_income_annual": null,
+      "occupation": ["worker", "labour", "unorganized", "self-employed", "farmer", "any"],
+      "gender": "any",
+      "location_type": "any",
+      "not_income_tax_payer": true
+    },
+    "benefit": "Guaranteed pension of Rs. 1000-5000/month after age 60 depending on contribution; spouse continuation benefit",
+    "documents_required": [
+      "Aadhaar Card",
+      "Bank Account (savings)",
+      "Mobile Number"
+    ],
+    "apply_url": "https://npscra.nsdl.co.in"
+  },
+  {
+    "id": "pm_kaushal",
+    "name": "PM Kaushal Vikas Yojana (PMKVY)",
+    "description": "Free skill training programme under Skill India Mission to enable youth to earn better livelihood.",
+    "eligibility": {
+      "min_age": 15,
+      "max_age": 45,
+      "max_income_annual": null,
+      "occupation": ["unemployed", "worker", "student", "any"],
+      "gender": "any",
+      "location_type": "any"
+    },
+    "benefit": "Free certified skill training; Rs. 500-8000 stipend during training; job placement support; certificate recognised by industry",
+    "documents_required": [
+      "Aadhaar Card",
+      "Bank Account",
+      "Educational Certificate (Class 8 or above preferred)",
+      "Passport Photo"
+    ],
+    "apply_url": "https://www.pmkvyofficial.org"
+  }
+]
