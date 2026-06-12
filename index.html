@@ -1379,11 +1379,11 @@
     .slide-7 .legend-dot { width:10px; height:10px; border-radius:50%; flex-shrink:0; }
 
     /* ── Slide 8 — Closing ── */
+    .slide-8 { background: var(--bg); }
     .slide-8 .dot-grid {
       position:absolute; inset:0;
       background-image:radial-gradient(circle, rgba(15,23,42,0.07) 1.5px, transparent 1.5px);
-      background-size:34px 34px;
-      pointer-events:none; z-index:0;
+      background-size:34px 34px; pointer-events:none; z-index:0;
     }
     .slide-8 .ring {
       position:absolute; border-radius:50%;
@@ -1392,83 +1392,96 @@
       pointer-events:none; z-index:1;
       animation:ringPulse 4s ease-out infinite;
     }
-    .slide-8 { background: var(--bg); }
     .slide-8 .india-bg {
-      position:absolute; top:0; left:0;
-      width:100%; height:100%;
-      pointer-events:none; z-index:0; opacity:0.07;
+      position:absolute; top:0; left:0; width:100%; height:100%;
+      pointer-events:none; z-index:0; opacity:0.06;
     }
     .slide-8 .glow-center {
       position:absolute; top:50%; left:50%;
       transform:translate(-50%,-50%);
-      width:800px; height:500px;
-      background:radial-gradient(ellipse at center, rgba(245,158,11,0.12) 0%, transparent 70%);
+      width:900px; height:560px;
+      background:radial-gradient(ellipse at center, rgba(245,158,11,0.14) 0%, transparent 68%);
       pointer-events:none; z-index:1;
     }
-    .slide-8 .corner-tl { position:absolute; top:24px; left:24px;   width:28px; height:28px; border-top:2px solid rgba(245,158,11,0.3);    border-left:2px solid rgba(245,158,11,0.3);   z-index:5; }
-    .slide-8 .corner-tr { position:absolute; top:24px; right:24px;  width:28px; height:28px; border-top:2px solid rgba(245,158,11,0.3);    border-right:2px solid rgba(245,158,11,0.3);  z-index:5; }
-    .slide-8 .corner-bl { position:absolute; bottom:24px; left:24px; width:28px; height:28px; border-bottom:2px solid rgba(245,158,11,0.3); border-left:2px solid rgba(245,158,11,0.3);   z-index:5; }
-    .slide-8 .corner-br { position:absolute; bottom:24px; right:24px;width:28px; height:28px; border-bottom:2px solid rgba(245,158,11,0.3); border-right:2px solid rgba(245,158,11,0.3);  z-index:5; }
+    .slide-8 .corner-tl { position:absolute; top:24px; left:24px;    width:28px; height:28px; border-top:2px solid rgba(245,158,11,0.3); border-left:2px solid rgba(245,158,11,0.3); z-index:5; }
+    .slide-8 .corner-tr { position:absolute; top:24px; right:24px;   width:28px; height:28px; border-top:2px solid rgba(245,158,11,0.3); border-right:2px solid rgba(245,158,11,0.3); z-index:5; }
+    .slide-8 .corner-bl { position:absolute; bottom:24px; left:24px; width:28px; height:28px; border-bottom:2px solid rgba(245,158,11,0.3); border-left:2px solid rgba(245,158,11,0.3); z-index:5; }
+    .slide-8 .corner-br { position:absolute; bottom:24px; right:24px;width:28px; height:28px; border-bottom:2px solid rgba(245,158,11,0.3); border-right:2px solid rgba(245,158,11,0.3); z-index:5; }
+    /* End-slide centred layout */
+    .slide-8 .end-wrap {
+      position:absolute; top:0; left:0; width:1280px; height:720px;
+      display:flex; flex-direction:column; align-items:center; justify-content:center;
+      z-index:10; gap:0;
+    }
+    .slide-8 .ty-heading {
+      font-size:62px; font-weight:900; color:var(--navy);
+      letter-spacing:-2px; line-height:1; margin:0 0 8px 0; text-align:center;
+    }
+    .slide-8 .ty-heading span { color:var(--saffron-dark); }
+    .slide-8 .ty-sub {
+      font-size:13px; font-weight:600; color:var(--muted);
+      letter-spacing:3px; text-transform:uppercase; margin:0 0 24px 0; text-align:center;
+    }
+    .slide-8 .s8-divider {
+      width:180px; height:2px;
+      background:linear-gradient(to right, transparent, var(--saffron), transparent);
+      border-radius:2px; margin:0 0 24px 0;
+    }
+    /* Team cards */
     .slide-8 .team-wrap {
-      position:absolute; top:52px; left:80px; width:1120px;
-      display:grid; grid-template-columns:1fr 1fr; gap:24px; z-index:10;
+      display:flex; gap:32px; align-items:stretch; margin:0 0 24px 0;
     }
     .slide-8 .team-card {
       background:var(--card); border:1px solid var(--border);
-      border-top:4px solid var(--saffron); border-radius:16px;
-      padding:24px 28px; display:flex; align-items:center; gap:20px;
-      box-shadow:0 2px 16px rgba(15,23,42,0.07);
+      border-top:4px solid var(--saffron); border-radius:20px;
+      padding:28px 36px; display:flex; flex-direction:column;
+      align-items:center; text-align:center; gap:10px; width:310px;
+      box-shadow:0 4px 24px rgba(15,23,42,0.08);
       transition:transform 0.3s ease, box-shadow 0.3s ease;
     }
-    .slide-8 .team-card:hover { transform:translateY(-4px); box-shadow:0 8px 32px rgba(15,23,42,0.12); }
+    .slide-8 .team-card:hover { transform:translateY(-6px); box-shadow:0 14px 40px rgba(15,23,42,0.13); }
     .slide-8 .team-avatar {
-      width:64px; height:64px; border-radius:50%;
+      width:84px; height:84px; border-radius:50%;
       background:linear-gradient(135deg, var(--saffron), var(--saffron-dark));
       display:flex; align-items:center; justify-content:center;
-      font-size:22px; font-weight:900; color:#fff; flex-shrink:0;
-      box-shadow:0 4px 12px rgba(245,158,11,0.3);
+      font-size:30px; font-weight:900; color:#fff; flex-shrink:0;
+      box-shadow:0 6px 20px rgba(245,158,11,0.38);
     }
-    .slide-8 .team-name { font-size:18px; font-weight:700; color:var(--navy); margin:0 0 4px 0; }
-    .slide-8 .team-role { font-size:13px; font-weight:600; color:var(--saffron-dark); margin:0 0 6px 0; text-transform:uppercase; letter-spacing:0.5px; }
+    .slide-8 .team-name { font-size:20px; font-weight:800; color:var(--navy); margin:0; }
+    .slide-8 .team-role { font-size:11px; font-weight:700; color:var(--saffron-dark); text-transform:uppercase; letter-spacing:1px; margin:0; }
     .slide-8 .team-bio  { font-size:12px; color:var(--muted); margin:0; line-height:1.5; }
-    .slide-8 .closing-wrap {
-      position:absolute; top:240px; left:80px;
-      width:1120px; z-index:10; text-align:center;
-    }
-    .slide-8 .quote-divider {
-      width:120px; height:2px;
-      background:linear-gradient(to right, transparent, var(--saffron), transparent);
-      margin:0 auto 32px; border-radius:2px;
-    }
-    .slide-8 .quote-line {
-      font-size:22px; font-weight:400; color:var(--muted);
-      margin:0 0 10px 0; line-height:1.5; display:block;
-    }
-    .slide-8 .quote-line.last {
-      font-size:28px; font-weight:700; color:var(--saffron-dark); margin-top:8px;
-    }
-    .slide-8 .bottom-row {
-      position:absolute; bottom:36px; left:80px; width:1120px;
-      display:flex; align-items:center; justify-content:space-between; z-index:10;
-    }
-    .slide-8 .bharat-badge {
-      display:inline-flex; align-items:center; gap:8px;
-      padding:8px 18px; border:1px solid rgba(245,158,11,0.4);
-      border-radius:24px; background:var(--saffron-light);
-      font-size:13px; font-weight:700; color:var(--saffron-dark); letter-spacing:0.5px;
+    /* Hackarena badge */
+    .slide-8 .hackarena-badge {
+      display:inline-flex; align-items:center; gap:10px;
+      padding:11px 28px; border:1.5px solid rgba(245,158,11,0.55);
+      border-radius:100px; background:var(--saffron-light);
+      font-size:14px; font-weight:800; color:var(--saffron-dark);
+      letter-spacing:1.5px; text-transform:uppercase; margin:0 0 20px 0;
       animation:pulseGlow 3s ease infinite;
     }
+    .slide-8 .hackarena-badge .hk-pill {
+      background:var(--saffron-dark); color:#fff;
+      font-size:11px; font-weight:900; padding:3px 9px;
+      border-radius:20px; letter-spacing:0.5px;
+    }
+    /* Bottom row */
+    .slide-8 .s8-bottom {
+      display:flex; align-items:center; gap:16px;
+    }
+    .slide-8 .bharat-badge {
+      display:inline-flex; align-items:center; gap:6px;
+      padding:7px 16px; border:1px solid rgba(245,158,11,0.35);
+      border-radius:24px; background:var(--saffron-light);
+      font-size:12px; font-weight:700; color:var(--saffron-dark);
+    }
+    .slide-8 .s8-dot { width:4px; height:4px; border-radius:50%; background:var(--dim); opacity:0.5; }
     .slide-8 .github-link {
-      display:inline-flex; align-items:center; gap:10px;
-      font-size:13px; font-weight:600; color:var(--muted); text-decoration:none;
-      padding:8px 18px; border:1px solid var(--border);
+      display:inline-flex; align-items:center; gap:8px;
+      font-size:12px; font-weight:600; color:var(--muted); text-decoration:none;
+      padding:7px 16px; border:1px solid var(--border);
       border-radius:24px; background:var(--card); transition:all 0.3s ease;
     }
-    .slide-8 .github-link:hover { color:var(--navy); border-color:var(--navy); background:var(--bg2); }
-    .slide-8 .thank-you {
-      font-size:15px; font-weight:600; color:var(--dim);
-      letter-spacing:1px; text-transform:uppercase;
-    }
+    .slide-8 .github-link:hover { color:var(--navy); border-color:var(--saffron); }
     /* ── Global: scroll mode shows all animated elements ── */
     body:not(.presentation-mode) [data-anim] {
       opacity:1 !important;
@@ -2283,65 +2296,67 @@
       <div class="slide-container slide-8">
         <div class="slide-num">08 / 08</div>
 
-        <!-- Dot grid -->
+        <!-- BG layers -->
         <div class="dot-grid"></div>
-
-        <!-- India map traced outline -->
         <svg class="india-bg" viewBox="0 0 1280 720" preserveAspectRatio="xMidYMid meet">
-          <path d="M580 140 L560 155 L540 160 L520 175 L510 195 L505 220 L510 240 L500 255 L490 275 L485 300 L490 320 L480 340 L470 360 L465 385 L470 405 L480 420 L475 440 L465 460 L460 480 L470 495 L480 510 L490 525 L500 535 L510 545 L520 550 L530 558 L540 562 L550 555 L558 545 L565 535 L572 525 L578 515 L585 505 L590 495 L600 485 L610 480 L620 490 L630 500 L640 510 L650 518 L660 510 L665 495 L660 480 L655 465 L660 450 L670 438 L680 425 L690 412 L700 398 L710 385 L720 370 L725 352 L720 335 L710 320 L705 305 L710 290 L720 275 L725 258 L718 240 L705 228 L695 215 L685 202 L672 192 L660 182 L648 170 L635 158 L620 148 L605 142 Z"
+          <path d="M580 140 L560 155 L540 160 L520 175 L510 195 L505 220 L510 240 L500 255 L490 275 L485 300 L490 320 L480 340 L470 360 L465 385 L460 410 L455 435 L450 455 L445 475 L440 495 L435 515 L440 535 L450 555 L460 570 L465 585 L460 600 L450 610 L445 625 L450 640 L460 650 L470 660 L480 665 L490 660 L500 650 L510 640 L525 635 L540 640 L555 645 L565 640 L575 630 L585 620 L590 605 L595 590 L600 575 L610 560 L620 550 L635 545 L650 540 L665 535 L675 525 L680 510 L685 495 L695 480 L705 465 L715 455 L725 445 L730 430 L725 415 L715 405 L705 395 L700 380 L705 365 L715 350 L720 335 L715 320 L705 305 L700 290 L705 275 L715 265 L720 250 L715 235 L705 220 L700 205 L710 195 L720 185 L725 170 L720 155 L710 145 L700 140 L685 138 L670 140 L655 145 L640 150 L625 148 L610 145 L595 142 L580 140 Z"
             fill="none" stroke="var(--saffron)" stroke-width="1.5"
             stroke-dasharray="2000" stroke-dashoffset="2000"/>
         </svg>
-
-        <!-- Glow + pulsing rings -->
         <div class="glow-center"></div>
-        <div class="ring" style="width:200px;height:200px;animation-delay:0s"></div>
-        <div class="ring" style="width:340px;height:340px;animation-delay:1.3s"></div>
-        <div class="ring" style="width:480px;height:480px;animation-delay:2.6s"></div>
-
-        <!-- Corner marks -->
+        <div class="ring" style="width:220px;height:220px;animation-delay:0s"></div>
+        <div class="ring" style="width:380px;height:380px;animation-delay:1.4s"></div>
+        <div class="ring" style="width:560px;height:560px;animation-delay:2.8s"></div>
         <div class="corner-tl"></div><div class="corner-tr"></div>
         <div class="corner-bl"></div><div class="corner-br"></div>
 
-        <!-- team cards -->
-        <div class="team-wrap">
-          <div class="team-card" data-anim="fadeUp" data-delay="100" data-dur="600">
-            <div class="team-avatar">RB</div>
-            <div class="team-info">
+        <!-- Centred end content -->
+        <div class="end-wrap">
+
+          <!-- Thank You heading -->
+          <h1 class="ty-heading" data-anim="fadeUp" data-delay="100" data-dur="600">
+            Thank <span>You</span> 🙏
+          </h1>
+          <p class="ty-sub" data-anim="fadeIn" data-delay="300" data-dur="500">Questions &amp; Discussion Welcome</p>
+
+          <div class="s8-divider" data-anim="scaleIn" data-delay="400" data-dur="400"></div>
+
+          <!-- Team cards -->
+          <div class="team-wrap">
+            <div class="team-card" data-anim="fadeUp" data-delay="500" data-dur="600">
+              <div class="team-avatar">RB</div>
               <p class="team-name">Ritesh Bonthalakoti</p>
               <p class="team-role">Lead Developer &amp; AI Architect</p>
-              <p class="team-bio">Full-stack engineer focused on voice AI, offline inference, and building tech for Bharat's next billion users.</p>
+              <p class="team-bio">Full-stack · Voice AI · Offline inference</p>
             </div>
-          </div>
-          <div class="team-card" data-anim="fadeUp" data-delay="200" data-dur="600">
-            <div class="team-avatar">SG</div>
-            <div class="team-info">
+            <div class="team-card" data-anim="fadeUp" data-delay="650" data-dur="600">
+              <div class="team-avatar">SG</div>
               <p class="team-name">Shreya Goyal</p>
               <p class="team-role">UX Researcher &amp; Domain Expert</p>
-              <p class="team-bio">Human-centred design and welfare policy research — ensuring JanSahayak speaks the language of those it serves.</p>
+              <p class="team-bio">Human-centred design · Welfare policy</p>
             </div>
           </div>
-        </div>
 
-        <!-- closing quote -->
-        <div class="closing-wrap">
-          <div class="quote-divider"></div>
-          <span class="quote-line" data-anim="fadeUp" data-delay="350" data-dur="700">"Every citizen deserves to know what the government has promised them."</span>
-          <span class="quote-line last" data-anim="fadeUp" data-delay="450" data-dur="700">JanSahayak is that promise — in every language, offline, for free.</span>
-        </div>
+          <!-- Hackarena badge -->
+          <div class="hackarena-badge" data-anim="fadeIn" data-delay="850" data-dur="500">
+            <i class="fa-solid fa-fire"></i>
+            <span>Hackarena</span>
+            <span class="hk-pill">2.0</span>
+          </div>
 
-        <!-- bottom row -->
-        <div class="bottom-row">
-          <span class="bharat-badge">🇮🇳 Built for Bharat</span>
-          <span class="thank-you">Thank you &amp; questions welcome</span>
-          <a class="github-link" href="#">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61-.546-1.385-1.335-1.755-1.335-1.755-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 21.795 24 17.295 24 12c0-6.63-5.37-12-12-12"/></svg>
-            github.com/ritesh-1918
-          </a>
-        </div>
+          <!-- Bottom links -->
+          <div class="s8-bottom" data-anim="fadeIn" data-delay="1000" data-dur="500">
+            <span class="bharat-badge">🇮🇳 Built for Bharat</span>
+            <div class="s8-dot"></div>
+            <a class="github-link" href="https://github.com/ritesh-1918/jansahayak-ai" target="_blank">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 21.795 24 17.295 24 12c0-6.63-5.37-12-12-12"/></svg>
+              github.com/ritesh-1918
+            </a>
+          </div>
+
+        </div><!-- /end-wrap -->
       </div><!-- /slide-container -->
     </div><!-- /slide-wrapper -->
-
   </div><!-- /page-wrapper -->
 
   <button id="fab" onclick="togglePres()">
