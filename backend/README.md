@@ -1,18 +1,11 @@
-# JanSahayak AI Backend
+---
+title: Janshayak AI Backend
+emoji: 🤖
+colorFrom: yellow
+colorTo: green
+sdk: docker
+pinned: false
+---
 
-## Setup
-
-1. Install dependencies:
-   ```bash
-   pip install -r requirements.txt
-   ```
-
-2. Run the server:
-   ```bash
-   uvicorn app.main:app --reload
-   ```
-
-## Endpoints
-
-- `GET /health`: Health check
-- `POST /chat`: Chat endpoint
+# Janshayak AI Backend
+FastAPI backend for Janshayak AI welfare scheme navigator.
