@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JanSahayak AI Chat</title>
+    <style>
+        body { font-family: sans-serif; margin: 20px; }
+        #chat-container { width: 100%; max-width: 600px; margin: 0 auto; border: 1px solid #ccc; padding: 10px; height: 400px; overflow-y: scroll; display: flex; flex-direction: column; }
+        .message { margin: 5px 0; padding: 8px; border-radius: 5px; max-width: 80%; }
+        .user { align-self: flex-end; background-color: #e0f7fa; }
+        .bot { align-self: flex-start; background-color: #f1f1f1; }
+        #input-area { width: 100%; max-width: 600px; margin: 10px auto; display: flex; gap: 10px; }
+        #message-input { flex-grow: 1; padding: 10px; }
+        #send-btn { padding: 10px 20px; cursor: pointer; }
+    </style>
+</head>
+<body>
+
+    <h2 style="text-align: center;">JanSahayak AI</h2>
+
+    <div id="chat-container">
+        <!-- Chat history will appear here -->
+    </div>
+
+    <div id="input-area">
+        <input type="text" id="message-input" placeholder="Type your message..." />
+        <button id="send-btn">Send</button>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
