@@ -6,7 +6,7 @@ from fastapi.middleware.cors import CORSMiddleware
 
 from app.config import settings
 from app.models.database import init_db
-from app.routes import health, chat, whatsapp
+from app.routes import health, chat, whatsapp, whatsapp_meta
 
 logging.basicConfig(
     level=logging.INFO,
@@ -30,6 +30,7 @@ app.add_middleware(
 app.include_router(health.router)
 app.include_router(chat.router)
 app.include_router(whatsapp.router)
+app.include_router(whatsapp_meta.router)
 
 
 @app.on_event("startup")
