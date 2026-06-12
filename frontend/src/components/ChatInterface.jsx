@@ -2,6 +2,7 @@ import React, { useState, useEffect, useRef } from 'react'
 import axios from 'axios'
 import SchemeCard from './SchemeCard.jsx'
 import VoiceInput from './VoiceInput.jsx'
+import config from '../config.js'
 
 const SESSION_KEY = 'jansahayak_session_id'
 
@@ -43,7 +44,7 @@ export default function ChatInterface() {
     setMessages(prev => [...prev, { role: 'user', content: msg }])
     setLoading(true)
     try {
-      const { data } = await axios.post('/chat', {
+      const { data } = await axios.post(`${config.API_BASE_URL}/chat`, {
         session_id: sessionId,
         message: msg,
         language,
