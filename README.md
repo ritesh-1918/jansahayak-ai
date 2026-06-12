@@ -1,10 +1,19 @@
 # JanSahayak AI 🇮🇳
 
-> **Bridging the gap between citizens and government welfare schemes through multilingual voice AI.**
+> **JanSahayak AI – A multilingual AI assistant that helps citizens understand and access government welfare schemes through conversational voice and chat.**
 
 ![License](https://img.shields.io/badge/License-MIT-blue.svg)
 ![Hackathon](https://img.shields.io/badge/Status-Hackathon%20Submission-orange)
 ![AI Powered](https://img.shields.io/badge/AI-Powered-green)
+
+<!-- Topics -->
+![Topic](https://img.shields.io/badge/Topic-AI-blue)
+![Topic](https://img.shields.io/badge/Topic-FastAPI-teal)
+![Topic](https://img.shields.io/badge/Topic-React-61dafb)
+![Topic](https://img.shields.io/badge/Topic-LLM-yellow)
+![Topic](https://img.shields.io/badge/Topic-Public_Services-purple)
+![Topic](https://img.shields.io/badge/Topic-Hackathon-orange)
+![Topic](https://img.shields.io/badge/Topic-Chatbot-pink)
 
 ---
 
