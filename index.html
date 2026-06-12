@@ -1043,7 +1043,91 @@
       15% { background:var(--saffron); color:#fff; box-shadow:0 0 0 8px rgba(245,158,11,0.22),0 4px 18px rgba(245,158,11,0.38); transform:scale(1.13); }
     }
 
-    /* ── Slide 5 — Core Features ── */
+    /* ── Slide 5 — Agentic Loop ── */
+    .slide-agentic { background: var(--bg); }
+    .slide-agentic .agentic-wrap {
+      display:flex; align-items:center; justify-content:center; gap:48px;
+      width:100%; height:calc(100% - 130px); padding:0 60px;
+    }
+    .orbit-center {
+      position:relative; width:320px; height:320px; flex-shrink:0;
+    }
+    .orbit-ring {
+      position:absolute; border-radius:50%; border:1px solid rgba(245,158,11,0.2);
+      top:50%; left:50%; transform:translate(-50%,-50%);
+    }
+    .ring-1 { width:260px; height:260px; }
+    .ring-2 { width:170px; height:170px; border-style:dashed; border-color:rgba(245,158,11,0.12); }
+    .orbit-core {
+      position:absolute; top:50%; left:50%; transform:translate(-50%,-50%);
+      width:80px; height:80px; background:#fff; border:2px solid rgba(245,158,11,0.35);
+      border-radius:50%; display:flex; flex-direction:column;
+      align-items:center; justify-content:center; z-index:2;
+      box-shadow:0 0 24px rgba(245,158,11,0.18);
+    }
+    .orbit-arrows {
+      position:absolute; top:50%; left:50%;
+      transform:translate(-50%,-50%);
+      width:420px; height:420px; z-index:0; pointer-events:none;
+    }
+    .ag-node {
+      position:absolute; display:flex; flex-direction:column; align-items:center;
+      gap:4px; z-index:3; width:100px;
+    }
+    .ag-observe { top:-16px; left:50%; transform:translateX(-50%); }
+    .ag-reason  { top:50%; right:-40px; transform:translateY(-50%); align-items:flex-start; }
+    .ag-act     { bottom:-16px; left:50%; transform:translateX(-50%); }
+    .ag-verify  { top:50%; left:-40px; transform:translateY(-50%); align-items:flex-end; text-align:right; }
+    .ag-icon {
+      width:40px; height:40px; border-radius:50%;
+      background:linear-gradient(135deg, var(--saffron-light), #fff);
+      border:2px solid var(--saffron); display:flex; align-items:center; justify-content:center;
+      color:var(--saffron-dark); font-size:16px;
+      box-shadow:0 2px 10px rgba(245,158,11,0.25);
+      transition:all 0.3s cubic-bezier(0.34,1.56,0.64,1);
+    }
+    .ag-node:hover .ag-icon { transform:scale(1.2); background:var(--saffron); color:#fff; box-shadow:0 0 16px rgba(245,158,11,0.45); }
+    .ag-label {
+      font-family:'Baloo 2', sans-serif; font-weight:800; font-size:11px;
+      color:var(--saffron-dark); letter-spacing:1px;
+    }
+    .ag-desc {
+      font-family:'Hind', sans-serif; font-size:10px; color:#888;
+      text-align:center; line-height:1.35;
+    }
+    .ag-reason .ag-desc, .ag-verify .ag-desc { text-align:inherit; }
+    .agentic-trace {
+      flex:1; max-width:460px; display:flex; flex-direction:column; gap:10px;
+    }
+    .trace-title {
+      font-family:'Baloo 2', sans-serif; font-weight:700; font-size:13px;
+      color:#999; text-transform:uppercase; letter-spacing:1px; margin-bottom:2px;
+    }
+    .trace-input {
+      background:var(--saffron-light); border-left:4px solid var(--saffron);
+      padding:10px 14px; border-radius:0 8px 8px 0; font-size:13px; color:var(--navy);
+      font-family:'Hind', sans-serif; font-style:italic; line-height:1.45;
+    }
+    .trace-step {
+      display:flex; gap:10px; align-items:flex-start;
+      background:#fff; border:1px solid #eee; border-radius:8px; padding:8px 12px;
+      box-shadow:0 1px 4px rgba(15,23,42,0.04);
+    }
+    .ts-phase {
+      font-family:'Baloo 2', sans-serif; font-weight:800; font-size:10px;
+      letter-spacing:1px; padding:2px 8px; border-radius:12px; flex-shrink:0;
+      margin-top:1px;
+    }
+    .ts-observe .ts-phase { background:rgba(245,158,11,0.15); color:var(--saffron-dark); }
+    .ts-reason  .ts-phase { background:rgba(99,102,241,0.12); color:#4338ca; }
+    .ts-act     .ts-phase { background:rgba(16,185,129,0.12); color:#065f46; }
+    .ts-verify  .ts-phase { background:rgba(239,68,68,0.10);  color:#b91c1c; }
+    .ts-val {
+      font-family:'Hind', sans-serif; font-size:12px; color:#555; line-height:1.45;
+    }
+    .trace-stack { display:flex; flex-wrap:wrap; gap:6px; margin-top:4px; }
+
+    /* ── Slide 6 — Core Features (was Slide 5) ── */
     .slide-5 { background: var(--bg); }
     .slide-5 .content-area {
       position:absolute;
@@ -1790,7 +1874,7 @@
 
         </div>
 
-        <div class="slide-num">01 / 08</div>
+        <div class="slide-num">01 / 09</div>
 
       </div>
     </div>
@@ -1806,7 +1890,7 @@
           <p class="subtitle-label">Why millions miss what they deserve</p>
         </div>
 
-        <div class="slide-num">02 / 08</div>
+        <div class="slide-num">02 / 09</div>
 
         <!-- Main content grid -->
         <div class="content-area">
@@ -1932,7 +2016,7 @@
           <p class="subtitle-label">This is not a small problem</p>
         </div>
 
-        <div class="slide-num">03 / 08</div>
+        <div class="slide-num">03 / 09</div>
 
         <!-- 2x2 stat grid -->
         <div class="stat-grid">
@@ -2001,7 +2085,7 @@
     <!-- Slide 4 — Our Solution -->
     <div class="slide-wrapper">
       <div class="slide-container slide-4">
-        <div class="slide-num">04 / 08</div>
+        <div class="slide-num">04 / 09</div>
 
         <div class="slide-title-block" data-anim="fadeUp" data-delay="0" data-dur="600">
           <h2>Our Solution</h2>
@@ -2143,6 +2227,14 @@
                 <i class="fa-solid fa-bolt"></i>
                 <span><strong>Instant eligibility check</strong> — no form filling maze</span>
               </div>
+              <div class="support-item">
+                <i class="fa-solid fa-server"></i>
+                <span><strong>FastAPI + React stack</strong> — built for speed &amp; scale</span>
+              </div>
+              <div class="support-item">
+                <i class="fa-solid fa-language"></i>
+                <span><strong>Bhashini</strong> for multilingual voice — 12 Indian languages</span>
+              </div>
             </div>
 
           </div><!-- /right-col -->
@@ -2150,9 +2242,108 @@
         </div><!-- /content-area -->
       </div><!-- /slide-container -->
     </div><!-- /slide-wrapper -->
-    <!-- Slide 5 — Core Features -->
+    <!-- Slide 5 — Agentic Loop -->
     <div class="slide-wrapper">
-      <div class="slide-container slide-5">
+      <div class="slide-container slide-5 slide-agentic">
+
+        <div class="slide-num">05 / 09</div>
+
+        <div class="slide-title-block" data-anim="fadeUp" data-delay="0" data-dur="600">
+          <h2>The Agentic Loop</h2>
+          <div class="accent-bar"></div>
+          <p class="subtitle-label">This is not a chatbot. It&rsquo;s an autonomous welfare agent.</p>
+        </div>
+
+        <div class="agentic-wrap" data-anim="fadeUp" data-delay="200" data-dur="700">
+
+          <!-- Center orbit diagram -->
+          <div class="orbit-center">
+            <div class="orbit-ring ring-1"></div>
+            <div class="orbit-ring ring-2"></div>
+            <div class="orbit-core">
+              <span style="font-size:28px;">🇮🇳</span>
+              <span style="font-size:13px;font-weight:700;color:var(--navy);margin-top:4px;">LangGraph</span>
+            </div>
+
+            <!-- 4 nodes positioned around the ring -->
+            <div class="ag-node ag-observe" data-anim="fadeUp" data-delay="300">
+              <div class="ag-icon"><i class="fa-solid fa-ear-listen"></i></div>
+              <div class="ag-label">OBSERVE</div>
+              <div class="ag-desc">Parse input<br>Extract profile fields</div>
+            </div>
+            <div class="ag-node ag-reason" data-anim="fadeUp" data-delay="450">
+              <div class="ag-icon"><i class="fa-solid fa-brain"></i></div>
+              <div class="ag-label">REASON</div>
+              <div class="ag-desc">Run eligibility engine<br>against 500+ schemes</div>
+            </div>
+            <div class="ag-node ag-act" data-anim="fadeUp" data-delay="600">
+              <div class="ag-icon"><i class="fa-solid fa-bolt"></i></div>
+              <div class="ag-label">ACT</div>
+              <div class="ag-desc">Generate matched schemes<br>+ doc checklist</div>
+            </div>
+            <div class="ag-node ag-verify" data-anim="fadeUp" data-delay="750">
+              <div class="ag-icon"><i class="fa-solid fa-circle-check"></i></div>
+              <div class="ag-label">VERIFY</div>
+              <div class="ag-desc">Ask clarifying questions<br>if data incomplete</div>
+            </div>
+
+            <!-- Animated arc arrows between nodes -->
+            <svg class="orbit-arrows" viewBox="0 0 420 420" xmlns="http://www.w3.org/2000/svg">
+              <defs>
+                <marker id="arrowhead" markerWidth="6" markerHeight="6" refX="5" refY="3" orient="auto">
+                  <path d="M0,0 L6,3 L0,6 Z" fill="var(--saffron)" opacity="0.8"/>
+                </marker>
+              </defs>
+              <!-- Curved arcs connecting nodes clockwise: Observe→Reason→Act→Verify→Observe -->
+              <path d="M 210 80 A 130 130 0 0 1 340 210" fill="none" stroke="var(--saffron)" stroke-width="1.5" stroke-dasharray="5 4" opacity="0.5" marker-end="url(#arrowhead)"/>
+              <path d="M 340 210 A 130 130 0 0 1 210 340" fill="none" stroke="var(--saffron)" stroke-width="1.5" stroke-dasharray="5 4" opacity="0.5" marker-end="url(#arrowhead)"/>
+              <path d="M 210 340 A 130 130 0 0 1 80 210"  fill="none" stroke="var(--saffron)" stroke-width="1.5" stroke-dasharray="5 4" opacity="0.5" marker-end="url(#arrowhead)"/>
+              <path d="M 80 210 A 130 130 0 0 1 210 80"   fill="none" stroke="var(--saffron)" stroke-width="1.5" stroke-dasharray="5 4" opacity="0.5" marker-end="url(#arrowhead)"/>
+              <!-- Orbiting dot -->
+              <circle r="5" fill="var(--saffron)" opacity="0.9">
+                <animateMotion dur="4s" repeatCount="indefinite">
+                  <mpath href="#orbitPath"/>
+                </animateMotion>
+              </circle>
+              <path id="orbitPath" d="M 210 80 A 130 130 0 1 1 209 80" fill="none"/>
+            </svg>
+          </div>
+
+          <!-- Right: demo trace -->
+          <div class="agentic-trace" data-anim="slideInRight" data-delay="500" data-dur="700">
+            <p class="trace-title">Live trace — demo input:</p>
+            <div class="trace-input">"I am a farmer in Bihar with 2 acres land, annual income ₹80,000"</div>
+            <div class="trace-step ts-observe">
+              <span class="ts-phase">OBSERVE</span>
+              <span class="ts-val">occupation=farmer · income=80000 · state=Bihar · land=2 acres</span>
+            </div>
+            <div class="trace-step ts-reason">
+              <span class="ts-phase">REASON</span>
+              <span class="ts-val">7 schemes matched · PM-KISAN 100% · PMFBY 100%</span>
+            </div>
+            <div class="trace-step ts-act">
+              <span class="ts-phase">ACT</span>
+              <span class="ts-val">Response generated with benefit amounts + doc checklist</span>
+            </div>
+            <div class="trace-step ts-verify">
+              <span class="ts-phase">VERIFY</span>
+              <span class="ts-val">Profile complete ✓ &mdash; no clarifying question needed</span>
+            </div>
+            <div class="trace-stack">
+              <span class="pill pill-saffron">FastAPI backend</span>
+              <span class="pill pill-green">LangGraph orchestration</span>
+              <span class="pill pill-navy">Groq → Gemini fallback</span>
+              <span class="pill pill-saffron">SQLite session memory</span>
+            </div>
+          </div>
+
+        </div><!-- /agentic-wrap -->
+      </div>
+    </div>
+
+    <!-- Slide 6 — Core Features -->
+    <div class="slide-wrapper">
+      <div class="slide-container slide-5 slide-5-features">
 
         <div class="slide-title-block" data-anim="fadeUp" data-delay="0" data-dur="600">
           <h2>Core Features</h2>
@@ -2160,7 +2351,7 @@
           <p class="subtitle-label">What makes Janshayak AI different</p>
         </div>
 
-        <div class="slide-num">05 / 08</div>
+        <div class="slide-num">06 / 09</div>
 
         <div class="content-area">
 
@@ -2242,6 +2433,23 @@
               </div>
             </div>
 
+            <div class="feature-card" data-anim="slideInRight" data-delay="860" data-dur="600">
+              <div class="feat-icon" style="background:linear-gradient(135deg,rgba(99,102,241,0.15),rgba(99,102,241,0.05)); color:#4338ca; border-color:rgba(99,102,241,0.3);">
+                <i class="fa-solid fa-diagram-project"></i>
+              </div>
+              <div class="feat-body">
+                <p class="feat-title">LangGraph Agent Orchestration</p>
+                <p class="feat-desc">
+                  Autonomous OBSERVE → REASON → ACT → VERIFY loop.<br>
+                  FastAPI + React stack. Groq / Gemini fallback chain.
+                </p>
+                <div style="display:flex; gap:6px; flex-wrap:wrap;">
+                  <span class="pill pill-navy">LangGraph</span>
+                  <span class="pill pill-green">Agentic loop</span>
+                </div>
+              </div>
+            </div>
+
           </div>
         </div>
       </div>
@@ -2259,7 +2467,7 @@
           <p class="subtitle-label">We don&rsquo;t charge the farmer. We charge the people responsible for reaching him.</p>
         </div>
 
-        <div class="slide-num">06 / 08</div>
+        <div class="slide-num">07 / 09</div>
 
         <div class="cols-wrap">
 
@@ -2371,7 +2579,7 @@
           <p class="subtitle-label">Where we are. Where we&rsquo;re going.</p>
         </div>
 
-        <div class="slide-num">07 / 08</div>
+        <div class="slide-num">08 / 09</div>
 
         <!-- Legend -->
         <div class="legend" data-anim="fadeIn" data-delay="200" data-dur="500">
@@ -2459,7 +2667,7 @@
     <!-- Slide 8 — Closing -->
     <div class="slide-wrapper" id="slide-8" data-index="7">
       <div class="slide-container slide-8">
-        <div class="slide-num">08 / 08</div>
+        <div class="slide-num">09 / 09</div>
 
         <!-- BG layers -->
         <div class="dot-grid"></div>
@@ -2525,7 +2733,7 @@
     <i class="fa-solid fa-play"></i>
   </button>
 
-  <div id="slide-counter">01 / 08</div>
+  <div id="slide-counter">01 / 09</div>
 
   <script>
     /* ── Logo (base64 embedded, no external file dependency) ── */
@@ -2586,7 +2794,7 @@
       }
       applyScale();
       document.getElementById('slide-counter').textContent =
-        String(cur + 1).padStart(2, '0') + ' / 08';
+        String(cur + 1).padStart(2, '0') + ' / 09';
       setTimeout(() => animateOnActivate(slides[cur]), 100);
     }
 
