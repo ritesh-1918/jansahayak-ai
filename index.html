@@ -1571,6 +1571,155 @@
     /* ── Slide counter: move up to clear key hint ── */
     #slide-counter { bottom:44px; }
 
+    /* ══════════════════════════════════════════
+       GLOBAL LIVE EFFECTS — BG + HOVER + MOTION
+       ══════════════════════════════════════════ */
+
+    /* Universal dot grid on every slide */
+    .slide-container::before {
+      content:'';
+      position:absolute; inset:0;
+      background-image:radial-gradient(circle, rgba(15,23,42,0.065) 1.5px, transparent 1.5px);
+      background-size:34px 34px;
+      pointer-events:none; z-index:0;
+    }
+    /* Warm ambient radial glow on every slide */
+    .slide-2::after, .slide-4::after, .slide-5::after, .slide-6::after, .slide-7::after {
+      content:'';
+      position:absolute; top:50%; left:50%;
+      transform:translate(-50%,-50%);
+      width:980px; height:580px;
+      background:radial-gradient(ellipse at center, rgba(245,158,11,0.07) 0%, transparent 65%);
+      pointer-events:none; z-index:0;
+    }
+
+    /* ── Floating soft orbs (ambient depth) ── */
+    @keyframes floatA { 0%,100%{transform:translate(0,0) scale(1);opacity:0.6;} 50%{transform:translate(12px,-18px) scale(1.08);opacity:0.9;} }
+    @keyframes floatB { 0%,100%{transform:translate(0,0) scale(1);opacity:0.5;} 50%{transform:translate(-10px,14px) scale(1.06);opacity:0.8;} }
+    .slide-3::before, .slide-5::before, .slide-6::before {
+      /* Overwrite dot grid with combined: dots stay via slide-container::before */
+    }
+    /* Orbs on slides 3 & 5 */
+    .slide-3 .stat-grid::after, .slide-5 .content-area::after {
+      content:'';
+      position:absolute; top:10%; right:-60px;
+      width:220px; height:220px; border-radius:50%;
+      background:radial-gradient(circle, rgba(245,158,11,0.08) 0%, transparent 70%);
+      pointer-events:none; z-index:0;
+      animation:floatA 7s ease-in-out infinite;
+    }
+
+    /* ── Spring transition base for all cards ── */
+    .stat-card, .hero-card, .feature-card, .deal-card,
+    .barrier-card, .team-card, .js-card {
+      transition: transform 0.35s cubic-bezier(0.34,1.56,0.64,1),
+                  box-shadow 0.35s ease,
+                  border-color 0.35s ease !important;
+      position:relative; overflow:hidden;
+    }
+
+    /* Shimmer sweep on hover */
+    .stat-card::after, .hero-card::after, .feature-card::after,
+    .deal-card::after, .barrier-card::after {
+      content:'';
+      position:absolute; top:0; left:-80%;
+      width:60%; height:100%;
+      background:linear-gradient(100deg,
+        transparent 20%,
+        rgba(245,158,11,0.09) 50%,
+        transparent 80%);
+      transform:skewX(-18deg);
+      transition:left 0.6s ease;
+      pointer-events:none; z-index:2;
+    }
+    .stat-card:hover::after, .hero-card:hover::after,
+    .feature-card:hover::after, .deal-card:hover::after,
+    .barrier-card:hover::after {
+      left:130%;
+    }
+
+    /* ── Lift + saffron glow on hover ── */
+    .stat-card:hover {
+      transform:translateY(-8px) scale(1.025) !important;
+      box-shadow:0 20px 52px rgba(245,158,11,0.18), 0 6px 20px rgba(15,23,42,0.1) !important;
+      border-color:rgba(245,158,11,0.45) !important;
+    }
+    .hero-card:hover {
+      transform:translateY(-7px) scale(1.015) !important;
+      box-shadow:0 18px 48px rgba(245,158,11,0.16), 0 6px 18px rgba(15,23,42,0.09) !important;
+      border-color:rgba(245,158,11,0.4) !important;
+    }
+    .feature-card:hover {
+      transform:translateY(-6px) scale(1.02) !important;
+      box-shadow:0 14px 40px rgba(245,158,11,0.14), 0 4px 14px rgba(15,23,42,0.08) !important;
+      border-color:rgba(245,158,11,0.4) !important;
+    }
+    .deal-card:hover {
+      transform:translateY(-8px) scale(1.018) !important;
+      box-shadow:0 18px 48px rgba(245,158,11,0.15), 0 6px 18px rgba(15,23,42,0.09) !important;
+    }
+    .barrier-card:hover {
+      transform:translateX(6px) scale(1.015) !important;
+      box-shadow:0 8px 28px rgba(245,158,11,0.13) !important;
+      border-left-color:var(--saffron-dark) !important;
+    }
+    .team-card:hover {
+      transform:translateY(-8px) scale(1.03) !important;
+      box-shadow:0 18px 48px rgba(245,158,11,0.18) !important;
+    }
+
+    /* ── Icon bounce + colour shift on card hover ── */
+    .card-icon, .hero-icon, .feat-icon, .card-top-icon {
+      transition:transform 0.35s cubic-bezier(0.34,1.56,0.64,1),
+                 background 0.3s ease, color 0.3s ease;
+    }
+    .stat-card:hover   .card-icon  { transform:scale(1.22) rotate(-8deg); background:var(--saffron); color:#fff; }
+    .hero-card:hover   .hero-icon  { transform:scale(1.2)  rotate(8deg);  background:var(--saffron); color:#fff; }
+    .feature-card:hover .feat-icon { transform:scale(1.2)  rotate(-6deg); background:var(--saffron); color:#fff; }
+    .deal-card:hover   .card-top-icon { transform:scale(1.18) rotate(6deg); }
+
+    /* ── Stat number glow on hover ── */
+    .stat-card:hover .stat-number {
+      text-shadow:0 0 22px rgba(245,158,11,0.45);
+      transition:text-shadow 0.3s ease;
+    }
+
+    /* ── Badge micro-interactions ── */
+    .hack-badge, .hackarena-badge, .bharat-badge, .eligible-badge {
+      transition:transform 0.3s cubic-bezier(0.34,1.56,0.64,1), box-shadow 0.3s ease;
+    }
+    .hack-badge:hover, .hackarena-badge:hover, .bharat-badge:hover {
+      transform:scale(1.07);
+      box-shadow:0 4px 18px rgba(245,158,11,0.32);
+    }
+
+    /* ── Flow node pulse smoothing (slide 4) ── */
+    .flow-node .node-circle {
+      transition:transform 0.3s ease, background 0.3s ease, box-shadow 0.3s ease;
+    }
+    .flow-node:hover .node-circle {
+      transform:scale(1.18);
+      background:var(--saffron);
+      color:#fff;
+      box-shadow:0 0 0 10px rgba(245,158,11,0.18), 0 4px 16px rgba(245,158,11,0.3);
+    }
+
+    /* ── TAM bar shimmer (slide 6) ── */
+    #tam-fill {
+      position:relative; overflow:hidden;
+    }
+    #tam-fill::after {
+      content:'';
+      position:absolute; top:0; left:-50%;
+      width:40%; height:100%;
+      background:linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+      animation:tamShimmer 2.4s ease-in-out infinite;
+    }
+    @keyframes tamShimmer {
+      0%   { left:-50%; }
+      100% { left:130%; }
+    }
+
   </style>
 </head>
 <body>
