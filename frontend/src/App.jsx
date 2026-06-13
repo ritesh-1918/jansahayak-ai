@@ -1,4 +1,6 @@
 import React from 'react'
+import { BrowserRouter, Routes, Route } from 'react-router-dom'
+import Landing from './pages/Landing.jsx'
 import IndexPage from './pages/index.jsx'
 
 export default function App() {
@@ -9,7 +11,7 @@ export default function App() {
         html, body, #root { height: 100%; }
         body {
           font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-          background: #f5f5f7;
+          background: #ffffff;
           color: #1d1d1f;
           -webkit-font-smoothing: antialiased;
           -moz-osx-font-smoothing: grayscale;
@@ -34,7 +36,20 @@ export default function App() {
           100% { background-position: 200% 0; }
         }
       `}</style>
-      <IndexPage />
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<Landing />} />
+          <Route path="/app" element={<ChatPage />} />
+        </Routes>
+      </BrowserRouter>
     </>
+  )
+}
+
+function ChatPage() {
+  return (
+    <div style={{ height: '100vh', display: 'flex', flexDirection: 'column', background: '#f5f5f7' }}>
+      <IndexPage />
+    </div>
   )
 }
