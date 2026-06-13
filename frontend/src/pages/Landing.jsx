@@ -666,9 +666,8 @@ function AgenticLoop() {
 // ─── TEAM ─────────────────────────────────────────────────────────────────────
 function Team() {
   const members = [
-    { name: 'Ritesh', role: 'Founder & Full-Stack', org: 'Gratian Technologies', avatar: 'R', color: C.orange, badge: '🚀', desc: 'Building accessible AI for Bharat. Backend, AI agent, and infrastructure.' },
-    { name: 'Aditya', role: 'AI & Knowledge Base', org: 'Research', avatar: 'A', color: '#4B6FA5', badge: '🧠', desc: 'Scheme eligibility models, knowledge graph curation, and NLP for Hindi.' },
-    { name: 'Priya', role: 'UX & Accessibility', org: 'Product Design', avatar: 'P', color: C.green, badge: '🎨', desc: 'Human-centred design for first-time internet users and rural citizens.' },
+    { name: 'Ritesh Bonthalakoti', role: 'Lead Developer & AI Architect', avatar: 'R', color: C.orange, badge: '🚀', desc: 'Backend, agentic loop, multi-LLM orchestration, WhatsApp integration, and cloud deployment.' },
+    { name: 'Shreya Goyal', role: 'UX Researcher & Domain Expert', avatar: 'S', color: C.green, badge: '🎨', desc: 'Human-centred design for rural citizens, welfare scheme research, and accessibility.' },
   ]
   return (
     <section id="team" style={{ padding: '112px 28px', background: C.cream }}>
@@ -682,31 +681,28 @@ function Team() {
             A small team building technology that gives 500 million Indians access to welfare they already deserve.
           </p>
         </div>
-        <div data-stagger className="team-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(3,1fr)', gap: 24 }}>
+        <div data-stagger className="team-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(2,1fr)', gap: 32, maxWidth: 760, margin: '0 auto' }}>
           {members.map((m, i) => (
-            <div key={i} className="tilt" style={{ background: C.white, border: `1px solid ${C.gray100}`, borderRadius: 22, padding: '36px 28px', textAlign: 'center', boxShadow: '0 2px 16px rgba(0,0,0,0.04)' }}>
-              {/* Avatar */}
+            <div key={i} className="tilt" style={{ background: C.white, border: `1px solid ${C.gray100}`, borderRadius: 22, padding: '40px 32px', textAlign: 'center', boxShadow: '0 2px 16px rgba(0,0,0,0.04)' }}>
               <div style={{ position: 'relative', display: 'inline-block', marginBottom: 20 }}>
-                <div style={{ width: 76, height: 76, borderRadius: '50%', background: `linear-gradient(135deg, ${m.color}, ${m.color}aa)`, display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: 30, fontWeight: 900, color: '#fff', fontFamily: "'Baloo 2', sans-serif", boxShadow: `0 8px 24px ${m.color}44` }}>
+                <div style={{ width: 84, height: 84, borderRadius: '50%', background: `linear-gradient(135deg, ${m.color}, ${m.color}aa)`, display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: 32, fontWeight: 900, color: '#fff', fontFamily: "'Baloo 2', sans-serif", boxShadow: `0 8px 24px ${m.color}44` }}>
                   {m.avatar}
                 </div>
                 <div style={{ position: 'absolute', bottom: 0, right: 0, width: 28, height: 28, borderRadius: '50%', background: C.white, border: `2px solid ${C.gray100}`, display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: 13 }}>
                   {m.badge}
                 </div>
               </div>
-              <div style={{ fontSize: 19, fontWeight: 800, color: C.navy, marginBottom: 4 }}>{m.name}</div>
-              <div style={{ fontSize: 14, fontWeight: 600, color: m.color, marginBottom: 4 }}>{m.role}</div>
-              <div style={{ fontSize: 12, color: C.gray400, marginBottom: 16 }}>{m.org}</div>
-              <p style={{ fontSize: 13, color: C.gray500, lineHeight: 1.65 }}>{m.desc}</p>
+              <div style={{ fontSize: 20, fontWeight: 800, color: C.navy, marginBottom: 6 }}>{m.name}</div>
+              <div style={{ fontSize: 13, fontWeight: 700, color: m.color, textTransform: 'uppercase', letterSpacing: '0.6px', marginBottom: 16 }}>{m.role}</div>
+              <p style={{ fontSize: 13, color: C.gray500, lineHeight: 1.7 }}>{m.desc}</p>
             </div>
           ))}
         </div>
-        {/* Hackathon badge */}
-        <div data-reveal="up" style={{ marginTop: 52, background: C.white, border: `1px solid ${C.gray100}`, borderRadius: 16, padding: '24px 32px', display: 'flex', alignItems: 'center', gap: 20, flexWrap: 'wrap' }}>
+        <div data-reveal="up" style={{ marginTop: 52, background: C.white, border: `1px solid ${C.gray100}`, borderRadius: 16, padding: '24px 32px', display: 'flex', alignItems: 'center', gap: 20, flexWrap: 'wrap', maxWidth: 760, margin: '52px auto 0' }}>
           <div style={{ fontSize: 36 }}>🏆</div>
           <div>
-            <div style={{ fontSize: 14, fontWeight: 800, color: C.navy }}>Built for the people — open source, non-profit intent</div>
-            <div style={{ fontSize: 13, color: C.gray500, marginTop: 4 }}>JanSahayak AI is a mission-driven project aimed at bridging the awareness gap between Indian citizens and welfare schemes they already qualify for.</div>
+            <div style={{ fontSize: 14, fontWeight: 800, color: C.navy }}>Hackarena 2.0 — Built for Bharat</div>
+            <div style={{ fontSize: 13, color: C.gray500, marginTop: 4 }}>JanSahayak AI is a mission-driven project bridging the gap between Indian citizens and welfare schemes they already qualify for.</div>
           </div>
         </div>
       </div>
