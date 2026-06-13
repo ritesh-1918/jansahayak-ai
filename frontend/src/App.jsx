@@ -8,14 +8,31 @@ export default function App() {
         *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
         html, body, #root { height: 100%; }
         body {
-          font-family: 'Hind', sans-serif;
-          background: linear-gradient(135deg, #fff8f0 0%, #fef9f4 100%);
-          color: #1a1a1a;
+          font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+          background: #f5f5f7;
+          color: #1d1d1f;
+          -webkit-font-smoothing: antialiased;
+          -moz-osx-font-smoothing: grayscale;
         }
-        ::-webkit-scrollbar { width: 4px; }
+
+        ::-webkit-scrollbar { width: 6px; }
         ::-webkit-scrollbar-track { background: transparent; }
-        ::-webkit-scrollbar-thumb { background: #FF993360; border-radius: 4px; }
-        textarea:focus { border-color: #FF9933 !important; box-shadow: 0 0 0 3px rgba(255,153,51,0.12); }
+        ::-webkit-scrollbar-thumb { background: #d1d5db; border-radius: 3px; }
+        ::-webkit-scrollbar-thumb:hover { background: #9ca3af; }
+
+        @keyframes fadeSlideUp {
+          from { opacity: 0; transform: translateY(12px); }
+          to { opacity: 1; transform: translateY(0); }
+        }
+        @keyframes dotPulse {
+          0%, 60%, 100% { opacity: 0.3; transform: scale(0.8); }
+          30% { opacity: 1; transform: scale(1); }
+        }
+        @keyframes pulse { 0%,100%{transform:scale(1)} 50%{transform:scale(1.12)} }
+        @keyframes shimmer {
+          0% { background-position: -200% 0; }
+          100% { background-position: 200% 0; }
+        }
       `}</style>
       <IndexPage />
     </>
