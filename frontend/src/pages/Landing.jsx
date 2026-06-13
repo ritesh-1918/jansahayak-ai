@@ -666,8 +666,8 @@ function AgenticLoop() {
 // ─── TEAM ─────────────────────────────────────────────────────────────────────
 function Team() {
   const members = [
-    { name: 'Ritesh Bonthalakoti', role: 'Lead Developer & AI Architect', avatar: 'R', color: C.orange, badge: '🚀', desc: 'Backend, agentic loop, multi-LLM orchestration, WhatsApp integration, and cloud deployment.' },
-    { name: 'Shreya Goyal', role: 'UX Researcher & Domain Expert', avatar: 'S', color: C.green, badge: '🎨', desc: 'Human-centred design for rural citizens, welfare scheme research, and accessibility.' },
+    { name: 'Ritesh Bonthalakoti', role: 'Lead Developer & AI Architect', avatar: 'R', img: '/ritesh.png', color: C.orange, badge: '🚀', desc: 'Backend, agentic loop, multi-LLM orchestration, WhatsApp integration, and cloud deployment.' },
+    { name: 'Shreya Goyal', role: 'UX Researcher & Domain Expert', avatar: 'S', img: '/shreya.jpg', color: C.green, badge: '🎨', desc: 'Human-centred design for rural citizens, welfare scheme research, and accessibility.' },
   ]
   return (
     <section id="team" style={{ padding: '112px 28px', background: C.cream }}>
@@ -685,10 +685,10 @@ function Team() {
           {members.map((m, i) => (
             <div key={i} className="tilt" style={{ background: C.white, border: `1px solid ${C.gray100}`, borderRadius: 22, padding: '40px 32px', textAlign: 'center', boxShadow: '0 2px 16px rgba(0,0,0,0.04)' }}>
               <div style={{ position: 'relative', display: 'inline-block', marginBottom: 20 }}>
-                <div style={{ width: 84, height: 84, borderRadius: '50%', background: `linear-gradient(135deg, ${m.color}, ${m.color}aa)`, display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: 32, fontWeight: 900, color: '#fff', fontFamily: "'Baloo 2', sans-serif", boxShadow: `0 8px 24px ${m.color}44` }}>
-                  {m.avatar}
+                <div style={{ width: 100, height: 100, borderRadius: '50%', overflow: 'hidden', boxShadow: `0 8px 28px ${m.color}55`, border: `3px solid ${m.color}33` }}>
+                  <img src={m.img} alt={m.name} style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center top' }} />
                 </div>
-                <div style={{ position: 'absolute', bottom: 0, right: 0, width: 28, height: 28, borderRadius: '50%', background: C.white, border: `2px solid ${C.gray100}`, display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: 13 }}>
+                <div style={{ position: 'absolute', bottom: 2, right: 2, width: 28, height: 28, borderRadius: '50%', background: C.white, border: `2px solid ${C.gray100}`, display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: 13 }}>
                   {m.badge}
                 </div>
               </div>
